@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天界面</title>
+    <script>
+        // 首先看本地存不存在 token，如果不存在，直接跳转到登录页面
+        if (!localStorage.token) {
+            window.location.replace('./login.html');
+        }
+    </script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <!-- 整体可视区域 -->
+    <div class="home-container">
+        <!-- 整体容器 -->
+        <div class="main-container flex">
+            <!-- 左边部分 -->
+            <div class="left-wrapper">
+                <!-- 标题 -->
+                <h2 class="left-title">人工智能聊天机器人</h2>
+                <!-- 聊天信息显示区域 -->
+                <div id="contentBody" class="content-body">
+                    <!-- <div class="chat-container robot-container">
+                        <img src="../img/robot.jpg" alt="">
+                        <div class="chat-txt">
+                            您好！我是腾讯机器人，非常欢迎您的到来，有什么想和我聊聊的吗？
+                        </div>
+                    </div> -->
+                    <!-- <div class="chat-container avatar-container">
+                        <img src="../img/avtar.png" alt="">
+                        <div class="chat-txt">你好</div>
+                    </div> -->
+                </div>
+                <!-- 发送信息区域 -->
+                <div class="left-footer">
+                    <textarea placeholder="在这里输入要发送的消息" class="input-container" name="" id="inputContainer" cols="30" rows="10"></textarea>
+                    <div class="handle-container">
+                        <div class="clear btn">清除</div>
+                        <div id="sendBtn" class="send-btn btn">发送</div>
+                        <div id="arrowBtn" class="arrow-container"></div>
+                        <div id="selectType" class="select-container">
+                            <div type="enter" class="select-item on">
+                                按Enter键发送
+                            </div>
+                            <div type="ctrlEnter" class="select-item">按Ctrl+Enter键发送</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 右边部分 -->
+            <div class="right-wrapper">
+                <!-- 关闭按钮 -->
+                <div id="closeBtn" class="close">&times;</div>
+                <!-- 用户昵称 -->
+                <div class="user-info">
+                    <img src="../img/avtar.png" alt="" srcset="">
+                    <span id="nickName" class="nick-name">张三</span>
+                </div>
+                <!-- 账号信息 -->
+                <div class="user-description">
+                    <div class="level-container">
+                        <span class="label">账户名:</span>
+                        <span id="accountName" class="account-name">hangang</span>
+                    </div>
+                    <div class="level-container">
+                        <span class="label">最后登录时间:</span>
+                        <span id="loginTime" class="login-time">2020年5月4日</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../util/formatDate.js"></script>
+    <script src="../util//http.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
